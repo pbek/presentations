@@ -4,14 +4,14 @@ _class: lead
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
-footer: 'Patrizio Bekerle - https://github.com/pbek/presentations/tree/main/digital-projects'
+footer: 'Patrizio Bekerle - https://github.com/pbek/presentations'
 ---
 
 ![bg left:40% 80%](https://upload.wikimedia.org/wikipedia/commons/7/77/TU_Graz.svg)
 
-# **Modern CLI Tools**
+# Modern CLI Tools
 
-Modern tools, that make your life easier and more productive.
+Modern tools, that can make your life easier and more productive.
 
 ---
 
