@@ -4,7 +4,7 @@ _class: lead
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
-footer: 'Patrizio Bekerle - https://bekerle.com'
+footer: 'Patrizio Bekerle - https://github.com/pbek/presentations/tree/main/digital-projects'
 ---
 
 ![bg left:40% 80%](https://upload.wikimedia.org/wikipedia/commons/7/77/TU_Graz.svg)
@@ -15,16 +15,108 @@ Modern tools, that make your life easier and more productive.
 
 ---
 
-# duf
+# [duf](https://github.com/muesli/duf)
 
-Replacement for disk free (df)
+Replacement for `df` (disk free)
 
 ![w:800px](./images/duf.webp)
 
 ---
 
-# dua
+# [dua](https://github.com/Byron/dua-cli)
 
-Replacement for disk usage (du)
+Replacement for `du` (disk usage)
 
 ![w:500px](./images/dua.webp)
+
+---
+
+# [ripgrep](https://github.com/BurntSushi/ripgrep)
+
+Very fast replacement for `grep`
+
+![w:900px](./images/ripgrep.webp)
+
+---
+
+# [eza](https://github.com/eza-community/eza)
+
+Replacement for `ls` with more colors
+
+![w:900px](./images/eza.webp)
+
+---
+
+# [bat](https://github.com/sharkdp/bat)
+
+Replacement for `less` with syntax highlighting
+
+![w:500px](./images/bat.webp)
+
+---
+
+# [btop](https://github.com/aristocratos/btop)
+
+Another `top` alternative
+
+![w:600px](https://raw.githubusercontent.com/aristocratos/btop/main/Img/normal.png)
+
+---
+
+# [tldr](https://github.com/tldr-pages/tldr)
+
+Collaborative cheatsheets for console commands
+
+![w:500px](https://raw.githubusercontent.com/tldr-pages/tldr/main/images/tldr-light.png)
+
+---
+
+# [fd](https://github.com/sharkdp/fd)
+
+Fast and user-friendly replacement for `find`
+
+![w:500px](https://raw.githubusercontent.com/sharkdp/fd/master/doc/screencast.svg)
+
+---
+
+# [zellij](https://github.com/zellij-org/zellij)
+
+Replacement for `screen` and `tmux` that allows copying from panels and has sane shortcuts
+
+![w:630px](https://raw.githubusercontent.com/zellij-org/zellij/main/assets/demo.gif)
+
+---
+
+# [lazygit](https://github.com/jesseduffield/lazygit)
+
+The best git TUI I know, even better than the commercial GUIs ones
+[15 Lazygit Features In Under 15 Minutes](https://www.youtube.com/watch?v=3Kq1MIfTWCE)
+
+![w:450px](https://raw.githubusercontent.com/jesseduffield/lazygit/assets/demo/commit_and_push-compressed.gif)
+
+---
+
+# [broot](https://github.com/Canop/broot)
+
+Fast directory switcher with search
+Has `br` alias for changing into directories
+
+![w:350px](https://raw.githubusercontent.com/Canop/broot/main/website/docs/img/20230930-overview.png)
+
+---
+
+# [zoxide](https://github.com/ajeetdsouza/zoxide)
+
+A smarter `cd` command that learns your habits
+
+![w:700px](https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/contrib/tutorial.webp)
+
+---
+
+# [qc](https://github.com/qownnotes/qc)
+
+[QOwnNotes](https://github.com/pbek/QOwnNotes) command-line snippet manager from Markdown files
+
+![w:500px](https://raw.githubusercontent.com/qownnotes/qc/main/qc.png)
+
+![w:450px](https://raw.githubusercontent.com/qownnotes/qc/main/commands.png)
