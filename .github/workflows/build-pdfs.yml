@@ -11,6 +11,8 @@ on:
 jobs:
 
   release:
+    permissions:
+      contents: write  # for actions/create-release to create a release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
