@@ -7,7 +7,7 @@ on:
     
 jobs:
 
-  release:      
+  setup:
     permissions:
       contents: write  # for actions/create-release to create a release
     runs-on: ubuntu-latest
@@ -20,9 +20,6 @@ jobs:
           node-version: '20'
       - name: Install Marp CLI
         run: npm install -g @marp-team/marp-cli
-      - name: Convert Markdown to HTML
-        run: |
-          marp digital-projects/modern-cli-tools/presentation.md -o ./_build/modern-cli-tools.pdf
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -33,17 +30,22 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
-      - name: Get PDF files
-        id: get_pdf_files
+
+  build-and-release:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        baseName: [ modern-cli-tools ]
+    steps:
+      - name: Convert Markdown to HTML
         run: |
-          echo "::set-output name=pdf_files::$(ls -1 _build/*.pdf | jq -R -s -c 'split("\n")[:-1]')"
-      - name: Upload Release Assets
-        run: |
-          for pdf in $(echo '${{ steps.get_pdf_files.outputs.pdf_files }}' | jq -r '.[]'); do
-            filename=$(basename $pdf)
-            echo "Uploading $filename"
-            curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-                 -H "Content-Type: application/pdf" \
-                 --data-binary @"$pdf" \
-                 "${{ steps.create_release.outputs.upload_url }}?name=$filename"
-          done
+          marp digital-projects/${{ matrix.baseName }}/presentation.md -o ./_build/modern-cli-tools.pdf
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./_build/${{ matrix.baseName }}.pdf
+          asset_name: ${{ matrix.baseName }}.pdf
+          asset_content_type: application/pdf
