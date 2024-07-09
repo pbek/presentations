@@ -36,7 +36,11 @@ jobs:
       - name: Install Marp CLI
         run: npm install -g @marp-team/marp-cli
       - name: Convert Markdown to HTML
-        run: marp digital-projects/modern-cli-tools/presentation.md -o ./_site/index.html
+        run: |
+          marp digital-projects/modern-cli-tools/presentation.md -o ./_site/modern-cli-tools/index.html
+      - name: Copy images
+        run: |
+          cp -r digital-projects/modern-cli-tools/images ./_site/modern-cli-tools/images
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
