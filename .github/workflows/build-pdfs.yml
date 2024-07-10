@@ -52,6 +52,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.create_release.outputs.upload_url }}
-          asset_path: ./digital-projects/${{ matrix.baseName }}/_build/${{ matrix.baseName }}.pdf
+          asset_path: ./_build/${{ matrix.baseName }}.pdf
           asset_name: ${{ matrix.baseName }}.pdf
           asset_content_type: application/pdf
