@@ -3,5 +3,7 @@
     nativeBuildInputs = with pkgs; [
       gnumake
       marp-cli
+      lazygit
+      zellij
     ];
 }
