@@ -26,8 +26,10 @@ jobs:
           draft: false
           prerelease: false
 
-  build-and-release:
+  build_and_release:
     name: '🏗️ Build and release'
+    permissions:
+      contents: write  # for actions/upload-release-asset to upload assets
     needs: create_release
     runs-on: ubuntu-latest
     strategy:
@@ -45,7 +47,6 @@ jobs:
       - name: Convert Markdown to HTML
         run: |
           marp digital-projects/${{ matrix.baseName }}/presentation.md -o ./_build/${{ matrix.baseName }}.pdf
-          find
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
