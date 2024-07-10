@@ -7,19 +7,13 @@ on:
     
 jobs:
 
-  setup:
+  create_release:
     permissions:
       contents: write  # for actions/create-release to create a release
     runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
-      - name: Install Marp CLI
-        run: npm install -g @marp-team/marp-cli
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -37,6 +31,14 @@ jobs:
       matrix:
         baseName: [ modern-cli-tools ]
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
       - name: Convert Markdown to HTML
         run: |
           marp digital-projects/${{ matrix.baseName }}/presentation.md -o ./_build/modern-cli-tools.pdf
@@ -45,7 +47,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          upload_url: ${{ needs.create_release.outputs.upload_url }}
           asset_path: ./_build/${{ matrix.baseName }}.pdf
           asset_name: ${{ matrix.baseName }}.pdf
           asset_content_type: application/pdf
