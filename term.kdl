@@ -1,0 +1,12 @@
+layout {
+  pane size="80%" {
+    command "lazygit"
+    focus true
+  }
+  pane command="make" {
+    args "watch"
+  }
+  pane size=1 borderless=true {
+    plugin location="zellij:status-bar"
+  }
+}
