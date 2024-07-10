@@ -45,7 +45,7 @@ jobs:
       - name: Convert Markdown to HTML
         run: |
           marp digital-projects/${{ matrix.baseName }}/presentation.md -o ./_build/${{ matrix.baseName }}.pdf
-          ls -hal ./digital-projects/${{ matrix.baseName }}/_build/${{ matrix.baseName }}.pdf
+          find
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
