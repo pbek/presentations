@@ -1,4 +1,5 @@
 ---
+title: Modern CLI Tools
 theme: gaia
 _class: lead
 paginate: true
