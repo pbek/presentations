@@ -90,9 +90,17 @@ Replacement for `screen` and `tmux` that allows copying from panels and has sane
 # [lazygit](https://github.com/jesseduffield/lazygit)
 
 The best git TUI I know, even better than the commercial GUIs ones
-[15 Lazygit Features In Under 15 Minutes](https://www.youtube.com/watch?v=3Kq1MIfTWCE)
+Watch [15 Lazygit Features In Under 15 Minutes](https://www.youtube.com/watch?v=3Kq1MIfTWCE)
 
 ![w:450px](https://raw.githubusercontent.com/jesseduffield/lazygit/assets/demo/commit_and_push-compressed.gif)
+
+---
+
+# [lazydocker](https://github.com/jesseduffield/lazydocker)
+
+A simple terminal UI for both docker and docker-compose
+
+![w:650px](https://github.com/jesseduffield/lazydocker/raw/master/docs/resources/demo3.gif)
 
 ---
 
