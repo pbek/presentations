@@ -1,3 +1,12 @@
+---
+title: Presentations by Patrizio Bekerle
+theme: gaia
+_class: lead
+backgroundColor: #fff
+backgroundImage: url('https://marp.app/assets/hero-background.svg')
+footer: 'Patrizio Bekerle - https://github.com/pbek/presentations'
+---
+
 # Presentations
 
 [![Deploy presentations](https://github.com/pbek/presentations/actions/workflows/build-page.yml/badge.svg)](https://github.com/pbek/presentations/actions/workflows/build-page.yml)
