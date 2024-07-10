@@ -25,6 +25,9 @@ jobs:
   build:
     name: "🏗️ Build"
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        baseName: [ modern-cli-tools ]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -39,10 +42,10 @@ jobs:
       - name: Convert Markdown to HTML
         run: |
           marp README.md -o ./_site/index.html
-          marp digital-projects/modern-cli-tools/presentation.md -o ./_site/modern-cli-tools/index.html
+          marp digital-projects/${{ matrix.baseName }}/presentation.md -o ./_site/${{ matrix.baseName }}/index.html
       - name: Copy images
         run: |
-          cp -r digital-projects/modern-cli-tools/images ./_site/modern-cli-tools/images
+          cp -r digital-projects/${{ matrix.baseName }}/images ./_site/${{ matrix.baseName }}/images
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
