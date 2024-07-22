@@ -56,6 +56,14 @@ Replacement for `less` with syntax highlighting
 
 ---
 
+# [batman](https://github.com/eth-p/bat-extras/blob/master/doc/batman.md)
+
+Replacement for `man` with `bat` for syntax highlighting
+
+![w:500px](./images/batman.webp)
+
+---
+
 # [btop](https://github.com/aristocratos/btop)
 
 Another `top` alternative
