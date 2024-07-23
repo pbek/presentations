@@ -54,10 +54,12 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           path: ./artifacts
+      - name: List contents of artifacts directory
+        run: ls -R ./artifacts
       - name: Merge artifacts
         run: |
           mkdir -p ./_site
-          cp -R ./artifacts/*/* ./_site/
+          find ./artifacts -type f -exec cp -v {} ./_site/ \;
       - name: Upload merged artifact
         uses: actions/upload-pages-artifact@v3
         with:
