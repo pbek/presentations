@@ -7,7 +7,9 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 footer: 'Patrizio Bekerle - https://github.com/pbek/presentations'
 ---
 
-# Presentations
+# [Presentations](https://github.com/pbek/presentations)
+
+[Releases](https://github.com/pbek/presentations/releases)
 
 [![Deploy presentations](https://github.com/pbek/presentations/actions/workflows/build-page.yml/badge.svg)](https://github.com/pbek/presentations/actions/workflows/build-page.yml)
 [![Release PDFs](https://github.com/pbek/presentations/actions/workflows/build-pdfs.yml/badge.svg)](https://github.com/pbek/presentations/actions/workflows/build-pdfs.yml)
