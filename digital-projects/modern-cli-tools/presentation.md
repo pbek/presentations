@@ -33,6 +33,14 @@ Replacement for `du` (disk usage)
 
 ---
 
+# [dust](https://github.com/bootandy/dust)
+
+"`du` + rust = `dust`. Like `du` but more intuitive."
+
+![w:800px](https://github.com/bootandy/dust/raw/master/media/snap.png)
+
+---
+
 # [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 Very fast replacement for `grep`
