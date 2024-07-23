@@ -33,10 +33,15 @@ jobs:
         run: |
           mkdir -p ./_site
           marp README.md -o ./_site/index.html
-          for baseName in modern-cli-tools modern-development-tooling; do
-            marp digital-projects/$baseName/presentation.md -o ./_site/$baseName/index.html
-            mkdir -p ./_site/$baseName/images
-            cp -r digital-projects/$baseName/images ./_site/$baseName
+          for dir in ./digital-projects/*/; do
+            baseName=$(basename "$dir")
+            if [ -f "$dir/presentation.md" ]; then
+              marp "$dir/presentation.md" -o "./_site/$baseName/index.html"
+              if [ -d "$dir/images" ]; then
+                mkdir -p "./_site/$baseName/images"
+                cp -r "$dir/images" "./_site/$baseName/"
+              fi
+            fi
           done
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
