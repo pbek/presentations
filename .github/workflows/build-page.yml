@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        baseName: [ modern-cli-tools ]
+        baseName: [ modern-cli-tools, modern-development-tooling ]
     steps:
       - name: Checkout
         uses: actions/checkout@v4

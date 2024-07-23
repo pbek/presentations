@@ -16,3 +16,4 @@ Presentations I gave / will give.
 Beside the webpages linked below, there are also generated PDFs in [releases](https://github.com/pbek/presentations/releases).
 
 - [Modern CLI Tools](https://pbek.github.io/presentations/modern-cli-tools/)
+- [Modern Development Tooling](https://pbek.github.io/presentations/modern-development-tooling/) (WIP!)
