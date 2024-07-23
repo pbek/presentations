@@ -88,6 +88,14 @@ Fast and user-friendly replacement for `find`
 
 ---
 
+# [difftastic](https://github.com/Wilfred/difftastic)
+
+Structural diff tool that compares files based on their syntax
+
+![w:700px](https://raw.githubusercontent.com/Wilfred/difftastic/master/img/js.png)
+
+---
+
 # [zellij](https://github.com/zellij-org/zellij)
 
 Replacement for `screen` and `tmux` that allows copying from panels and has sane shortcuts
@@ -119,6 +127,15 @@ Fast directory switcher with search
 Has `br` alias for changing into directories
 
 ![w:350px](https://raw.githubusercontent.com/Canop/broot/main/website/docs/img/20230930-overview.png)
+
+---
+
+# [yazi](https://github.com/sxyazi/yazi)
+
+"Blazing Fast Terminal File Manager"
+I use a `yy` [alias](https://github.com/pbek/nixcfg/blob/36b6818478eed2813293ee258afd12a45543fcd9/modules/mixins/common.nix#L203-L215) for changing into directories
+
+![w:700px](./images/yazi.webp)
 
 ---
 
