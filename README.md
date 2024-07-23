@@ -9,7 +9,8 @@ footer: 'Patrizio Bekerle - https://github.com/pbek/presentations'
 
 # [Presentations](https://github.com/pbek/presentations)
 
-[Releases](https://github.com/pbek/presentations/releases)
+[Releases](https://github.com/pbek/presentations/releases) |
+[Changelog](https://github.com/pbek/presentations/blob/main/CHANGELOG.md)
 
 [![Deploy presentations](https://github.com/pbek/presentations/actions/workflows/build-page.yml/badge.svg)](https://github.com/pbek/presentations/actions/workflows/build-page.yml)
 [![Release PDFs](https://github.com/pbek/presentations/actions/workflows/build-pdfs.yml/badge.svg)](https://github.com/pbek/presentations/actions/workflows/build-pdfs.yml)

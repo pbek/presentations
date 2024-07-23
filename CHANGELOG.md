@@ -1,0 +1,25 @@
+# Changelog
+
+## v0.4.1
+
+- Fix local image inclusion
+
+## v0.4.0
+
+- Add current progress of `modern-development-tooling` presentation
+
+## v0.3.0
+
+- Add `modern-cli-tools` slides
+
+## v0.2.0
+
+- Add `modern-cli-tools` slides
+
+## v0.1.0
+
+- Add `modern-cli-tools` slides
+
+## v0.0.11
+
+- Add initial `modern-cli-tools` presentation
