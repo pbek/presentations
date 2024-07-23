@@ -27,8 +27,9 @@ Replacement for `df` (disk free)
 # [dua](https://github.com/Byron/dua-cli)
 
 Replacement for `du` (disk usage)
+`dua interactive` for an interactive mode, like `ncdu`
 
-![w:500px](./images/dua.webp)
+![w:450px](./images/dua.webp)
 
 ---
 
