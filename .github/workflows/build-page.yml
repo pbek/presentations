@@ -36,7 +36,7 @@ jobs:
           for baseName in modern-cli-tools modern-development-tooling; do
             marp digital-projects/$baseName/presentation.md -o ./_site/$baseName/index.html
             mkdir -p ./_site/$baseName/images
-            cp -r digital-projects/$baseName/images ./_site/$baseName/images
+            cp -r digital-projects/$baseName/images ./_site/$baseName
           done
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
