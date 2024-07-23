@@ -41,6 +41,14 @@ Replacement for `du` (disk usage)
 
 ---
 
+# [erdtree](https://github.com/solidiquis/erdtree)
+
+"Modern, cross-platform, multi-threaded, and general purpose filesystem and disk-usage utility"
+
+![w:450px](./images/erdtree.webp)
+
+---
+
 # [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 Very fast replacement for `grep`
