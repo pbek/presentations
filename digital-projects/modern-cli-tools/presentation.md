@@ -164,6 +164,47 @@ A smarter `cd` command that learns your habits
 
 ---
 
+# [fzf](https://github.com/junegunn/fzf)
+
+A command-line fuzzy finder, for example `find * -type f | fzf`
+
+![w:600px](https://raw.githubusercontent.com/junegunn/i/master/fzf-preview.png)
+
+---
+
+# [sysz](https://github.com/joehillen/sysz)
+
+An `fzf` terminal UI for `systemctl`
+
+[![w:700px](https://camo.githubusercontent.com/5dab4de7542263e493bb1b95df2881c218c0ea622c5d1d99152e64f9b3eb6bd5/68747470733a2f2f61736369696e656d612e6f72672f612f424c734a7a37337546374464516a37465647714c50687143612e737667)](https://asciinema.org/a/BLsJz73uF7DdQj7FVGqLPhqCa)
+
+---
+
+# [ouch](https://github.com/ouch-org/ouch)
+
+Painless compression and decompression in the terminal (`tar`, `zip`, `gzip`, `bzip2`, `xz`, `7z`, `rar`, ...)
+
+```bash
+# Compress two files into `archive.zip`
+ouch compress one.txt two.txt archive.zip
+
+# Decompress a file
+ouch decompress archive.zip
+
+# List the contents of a compressed file
+ouch list archive.zip
+```
+
+---
+
+# [procs](https://github.com/dalance/procs)
+
+A modern replacement for ps
+
+![w:800px](./images/procs.webp)
+
+---
+
 # [qc](https://github.com/qownnotes/qc)
 
 [QOwnNotes](https://github.com/pbek/QOwnNotes) command-line snippet manager from Markdown files
