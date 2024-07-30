@@ -8,7 +8,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 footer: 'Patrizio Bekerle - https://github.com/pbek/presentations'
 ---
 
-![bg left:40% 80%](../tu-graz.svg)
+![bg left:40% 80%](./images/tu-graz.svg)
 
 # Modern CLI Tools
 

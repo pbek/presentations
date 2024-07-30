@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.1
+
+- Fix loading of `tu-graz.svg`
+
 ## v0.5.0
 
 - Add more slides to `modern-cli-tools` presentation
