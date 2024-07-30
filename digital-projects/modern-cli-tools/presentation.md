@@ -12,7 +12,7 @@ footer: 'Patrizio Bekerle - https://github.com/pbek/presentations'
 
 # Modern CLI Tools
 
-Modern tools, that can make your life easier and more productive.
+Modern tools, that can make your life easier and more productive
 
 ---
 
