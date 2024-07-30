@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.5.0
+
+- Add more slides to `modern-cli-tools` presentation
+- Fix grammar
+- Use local `tu-graz.svg`
+
 ## v0.4.1
 
 - Fix local image inclusion
