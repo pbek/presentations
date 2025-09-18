@@ -5,7 +5,7 @@ _class: lead
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
-footer: 'Patrizio Bekerle - https://github.com/pbek/presentations'
+footer: "Patrizio Bekerle - https://github.com/pbek/presentations"
 ---
 
 ![bg left:40% 80%](./images/tu-graz.svg)

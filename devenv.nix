@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }:
+{ pkgs, ... }:
 
 {
   # https://devenv.sh/basics/
@@ -10,12 +10,11 @@
     marp-cli
     lazygit
     zellij
-];
+  ];
 
   enterShell = ''
     echo "🔨 Presentation dev shell"
   '';
-
 
   # https://devenv.sh/git-hooks/
   git-hooks.hooks = {

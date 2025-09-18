@@ -4,7 +4,7 @@ theme: gaia
 _class: lead
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
-footer: 'Patrizio Bekerle - https://github.com/pbek/presentations'
+footer: "Patrizio Bekerle - https://github.com/pbek/presentations"
 ---
 
 # [Presentations](https://github.com/pbek/presentations)
