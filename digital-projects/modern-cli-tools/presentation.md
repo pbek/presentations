@@ -176,7 +176,7 @@ A command-line fuzzy finder, for example `find * -type f | fzf`
 
 An `fzf` terminal UI for `systemctl`
 
-[![w:700px](https://camo.githubusercontent.com/5dab4de7542263e493bb1b95df2881c218c0ea622c5d1d99152e64f9b3eb6bd5/68747470733a2f2f61736369696e656d612e6f72672f612f424c734a7a37337546374464516a37465647714c50687143612e737667)](https://asciinema.org/a/BLsJz73uF7DdQj7FVGqLPhqCa)
+[![w:700px](./images/yazi.webp)](https://asciinema.org/a/BLsJz73uF7DdQj7FVGqLPhqCa)
 
 ---
 
