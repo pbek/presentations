@@ -39,7 +39,7 @@ jobs:
               with:
                   nix_path: nixpkgs=channel:nixos-unstable
             - name: 🔧 Install devenv.sh
-              run: nix profile install nixpkgs#devenv
+              run: nix profile add nixpkgs#devenv
             - name: 📃 Build PDFs
               run: devenv shell "just build-pdfs"
             - name: 🚀 Upload Release Assets
