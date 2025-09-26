@@ -5,6 +5,10 @@
 default:
     @just --list
 
+# Variables
+
+zellijSession := "presentation"
+
 # Build all presentations as PDFs
 build-pdfs:
     #!/usr/bin/env bash
@@ -28,7 +32,7 @@ build-site:
     projects=("digital-projects")
     mkdir -p ./.site
     echo "Building index page..."
-    marp README.md -o ./.site/index.html
+    marp INDEX.md -o ./.site/index.html
     for project in "${projects[@]}"; do
         for dir in "$project"/*/; do
             baseName=$(basename "$dir")
@@ -45,15 +49,21 @@ build-site:
 
 # Start marp in watch mode with server and preview
 watch:
-    marp -wsp .
+    PORT=8181 marp -wsp . --port
 
-# Attach to zellij presentations session
-term:
-    zellij --layout term.kdl attach presentations -cf
+# Open a terminal with the presentations session
+[group('dev')]
+term-run:
+    zellij --layout term.kdl attach {{ zellijSession }} -c
 
-# Delete zellij presentations session
+# Kill the presentations session
+[group('dev')]
 term-kill:
-    zellij delete-session presentations -f
+    -zellij delete-session {{ zellijSession }} -f
+
+# Kill and run a terminal with the presentations session
+[group('dev')]
+term: term-kill term-run
 
 # Format all files
 [group('linter')]
