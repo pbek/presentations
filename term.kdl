@@ -3,7 +3,7 @@ layout {
     command "lazygit"
     focus true
   }
-  pane command="make" {
+  pane command="just" {
     args "watch"
   }
   pane size=1 borderless=true {
