@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.2
+
+- Use devenv in build chain
+
 ## v0.5.1
 
 - Fix loading of `tu-graz.svg`
