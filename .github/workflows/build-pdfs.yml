@@ -26,32 +26,29 @@ jobs:
                   prerelease: false
 
     build_and_release:
-        name: "🏗️ Build and release"
+        name: "🏗️ Build and release PDFs"
         permissions:
             contents: write # for actions/upload-release-asset to upload assets
         needs: create_release
         runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                baseName: [modern-cli-tools, modern-development-tooling]
         steps:
             - name: Checkout
-              uses: actions/checkout@v4
-            - name: Setup Node.js
-              uses: actions/setup-node@v2
+              uses: actions/checkout@v5
+            - name: ⚙️ Install Nix
+              uses: cachix/install-nix-action@v31
               with:
-                  node-version: "20"
-            - name: Install Marp CLI
-              run: npm install -g @marp-team/marp-cli
-            - name: Convert Markdown to HTML
+                  nix_path: nixpkgs=channel:nixos-unstable
+            - name: 🔧 Install devenv.sh
+              run: nix profile install nixpkgs#devenv
+            - name: 📃 Build PDFs
+              run: devenv shell "just build-pdfs"
+            - name: 🚀 Upload Release Assets
               run: |
-                  marp digital-projects/${{ matrix.baseName }}/presentation.md -o ./_build/${{ matrix.baseName }}.pdf --allow-local-files
-            - name: Upload Release Asset
-              uses: actions/upload-release-asset@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  upload_url: ${{ needs.create_release.outputs.upload_url }}
-                  asset_path: ./_build/${{ matrix.baseName }}.pdf
-                  asset_name: ${{ matrix.baseName }}.pdf
-                  asset_content_type: application/pdf
+                  for pdf in ./.build/*.pdf; do
+                    baseName=$(basename "$pdf" .pdf)
+                    curl -X POST \
+                      -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                      -H "Content-Type: application/pdf" \
+                      --data-binary @"$pdf" \
+                      "${{ needs.create_release.outputs.upload_url }}?name=${baseName}.pdf&label=${baseName}.pdf"
+                  done

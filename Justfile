@@ -5,6 +5,44 @@
 default:
     @just --list
 
+# Build all presentations as PDFs
+build-pdfs:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    projects=("digital-projects")
+    mkdir -p ./.build
+    for project in "${projects[@]}"; do
+        for presentation in "$project"/*; do
+            if [ -d "$presentation" ] && [ -f "$presentation/presentation.md" ]; then
+                presentation_name=$(basename "$presentation")
+                echo "Building $presentation_name..."
+                marp "$presentation/presentation.md" -o "./.build/$presentation_name.pdf" --allow-local-files
+            fi
+        done
+    done
+
+# Build all presentations as webpages
+build-site:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    projects=("digital-projects")
+    mkdir -p ./.site
+    echo "Building index page..."
+    marp README.md -o ./.site/index.html
+    for project in "${projects[@]}"; do
+        for dir in "$project"/*/; do
+            baseName=$(basename "$dir")
+            if [ -f "$dir/presentation.md" ]; then
+                echo "Building $baseName webpage..."
+                marp "$dir/presentation.md" -o "./.site/$baseName/index.html"
+                if [ -d "$dir/images" ]; then
+                    mkdir -p "./.site/$baseName/images"
+                    cp -r "$dir/images" "./.site/$baseName/"
+                fi
+            fi
+        done
+    done
+
 # Start marp in watch mode with server and preview
 watch:
     marp -wsp .

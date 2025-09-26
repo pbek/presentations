@@ -16,37 +16,23 @@ concurrency:
 
 jobs:
     build-and-deploy:
-        name: "🏗️ Build and Deploy"
+        name: "🏗️ Build and Deploy webpage"
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v4
-            - name: Setup Pages
-              uses: actions/configure-pages@v5
-            - name: Setup Node.js
-              uses: actions/setup-node@v2
+              uses: actions/checkout@v5
+            - name: ⚙️ Install Nix
+              uses: cachix/install-nix-action@v31
               with:
-                  node-version: "20"
-            - name: Install Marp CLI
-              run: npm install -g @marp-team/marp-cli
-            - name: Convert Markdown to HTML and Copy Images
-              run: |
-                  mkdir -p ./_site
-                  marp README.md -o ./_site/index.html
-                  for dir in ./digital-projects/*/; do
-                    baseName=$(basename "$dir")
-                    if [ -f "$dir/presentation.md" ]; then
-                      marp "$dir/presentation.md" -o "./_site/$baseName/index.html"
-                      if [ -d "$dir/images" ]; then
-                        mkdir -p "./_site/$baseName/images"
-                        cp -r "$dir/images" "./_site/$baseName/"
-                      fi
-                    fi
-                  done
+                  nix_path: nixpkgs=channel:nixos-unstable
+            - name: 🔧 Install devenv.sh
+              run: nix profile install nixpkgs#devenv
+            - name: 📃 Build site
+              run: devenv shell "just build-site"
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
-                  path: ./_site
+                  path: ./.site
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v4
