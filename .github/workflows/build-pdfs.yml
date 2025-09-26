@@ -44,7 +44,7 @@ jobs:
               run: devenv shell "just build-pdfs"
             - name: 🚀 Upload Release Assets
               run: |
-                  for pdf in ./build/*.pdf; do
+                  for pdf in ./.build/*.pdf; do
                     if [ -f "$pdf" ]; then
                       baseName=$(basename "$pdf" .pdf)
                       echo "Uploading $baseName.pdf..."
