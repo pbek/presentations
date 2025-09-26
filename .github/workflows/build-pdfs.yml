@@ -28,7 +28,7 @@ jobs:
     build_and_release:
         name: "🏗️ Build and release PDFs"
         permissions:
-            contents: write # for actions/upload-release-asset to upload assets
+            contents: write # for uploading assets
         needs: create_release
         runs-on: ubuntu-latest
         steps:
