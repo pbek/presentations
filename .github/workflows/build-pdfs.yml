@@ -44,11 +44,12 @@ jobs:
               run: devenv shell "just build-pdfs"
             - name: 🚀 Upload Release Assets
               run: |
-                  for pdf in ./.build/*.pdf; do
-                    baseName=$(basename "$pdf" .pdf)
-                    curl -X POST \
-                      -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-                      -H "Content-Type: application/pdf" \
-                      --data-binary @"$pdf" \
-                      "${{ needs.create_release.outputs.upload_url }}?name=${baseName}.pdf&label=${baseName}.pdf"
+                  for pdf in ./build/*.pdf; do
+                    if [ -f "$pdf" ]; then
+                      baseName=$(basename "$pdf" .pdf)
+                      echo "Uploading $baseName.pdf..."
+                      gh release upload ${{ github.ref_name }} "$pdf" --clobber
+                    fi
                   done
+              env:
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
